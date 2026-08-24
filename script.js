@@ -2,12 +2,17 @@ function getComputerChoice(){
     let n = Math.random();
 
     if (n<0.3){
-        console.log('Rock');
+        console.log('rock');
     } else if (n<0.6){
-        console.log('Paper');        
+        console.log('paper');        
     } else{
-        console.log('Scissor');        
+        console.log('scissor');        
     }
 }
 
-getComputerChoice();
+function getHumanChoice(){
+    let input = prompt('rock/paper/scissor:');
+    console.log(input);
+}
+
+getHumanChoice();
