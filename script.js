@@ -1,18 +1,64 @@
 function getComputerChoice(){
     let n = Math.random();
 
+    let comChoice = ''
     if (n<0.3){
-        console.log('rock');
+        comChoice = 'rock'
     } else if (n<0.6){
-        console.log('paper');        
+        comChoice ='paper';        
     } else{
-        console.log('scissor');        
+        comChoice = 'scissor';        
     }
+
+    console.log('computer: ' + comChoice);
+    return comChoice;
 }
 
 function getHumanChoice(){
-    let input = prompt('rock/paper/scissor:');
-    console.log(input);
+    let humChoice = prompt('rock/paper/scissor:');
+
+    return humChoice;
 }
 
-getHumanChoice();
+function playRound(comp, human){
+    let c = comp;
+    let h = human.toLowerCase();
+
+    if(c==h){
+        console.log('draw');
+    } else if (c=='rock'){
+        if (h=='paper'){
+            humanScore++;
+            console.log('You win, Paper covers Rock');
+        } else if (h=='scissor'){
+            computaScore++;
+            console.log('You loose, Rock smashes Scissor');
+        }
+    } else if (c=='paper'){
+        if (h=='rock'){
+            computaScore++;
+            console.log('You loose, Paper covers Rock');
+        } else if (h=='scissor'){
+            humanScore++;
+            console.log('You win, Scissor cuts Paper');
+        }
+    } else if (c=='scissor'){
+        if (h=='rock'){
+            humanScore++;
+            console.log('You win, Rock smashes Scissor');
+        } else if (h=='paper'){
+            computaScore++;
+            console.log('You loose, Scissor cuts Paper');
+        }
+    }
+
+    console.log('your score: '+ humanScore + ' computer score: ' + computaScore);
+}
+
+let humanScore = 0;
+let computaScore = 0;
+let comp = getComputerChoice();
+let human = getHumanChoice() ;
+
+playRound(comp, human);
+
