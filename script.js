@@ -16,7 +16,7 @@ function getComputerChoice(){
 
 function getHumanChoice(){
     let humChoice = prompt('rock/paper/scissor:');
-
+    console.log('your choice: ' + humChoice);
     return humChoice;
 }
 
@@ -52,13 +52,30 @@ function playRound(comp, human){
         }
     }
 
-    console.log('your score: '+ humanScore + ' computer score: ' + computaScore);
+    // console.log('your score: '+ humanScore + ' computer score: ' + computaScore);
+}
+
+function playGame(){
+    let i=0;
+    for (i=0;i<5;i++){
+        let comp = getComputerChoice();
+        let human = getHumanChoice();
+
+        playRound(comp, human);
+    }
+
 }
 
 let humanScore = 0;
 let computaScore = 0;
-let comp = getComputerChoice();
-let human = getHumanChoice() ;
 
-playRound(comp, human);
+playGame();
+if (humanScore > computaScore){
+        console.log('you win! ' + 'your score: '+ humanScore + ' computer score: ' + computaScore )
+} else if (computaScore > humanScore){
+        console.log('you loose! ' + 'your score: '+ humanScore + ' computer score: ' + computaScore )
+} else {
+        console.log('draw!' + 'your score: '+ humanScore + ' computer score: ' + computaScore )
+}
+
 
