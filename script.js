@@ -32,7 +32,7 @@ function playRound(me) {
     else {
         w=winner()
         const win = document.createElement('div')
-        win.textContent = "congrats " + w + ' won';
+        win.textContent = w + ' won';
         div.appendChild(win);
     }
 
@@ -42,7 +42,6 @@ function playRound(me) {
 }
 
 
-// remove this??
 function playGame(h, c) {
 
     if (c == h) {
@@ -86,10 +85,6 @@ function winner() {
     }
     
 }
-
-
-
-// dom
 
 
 

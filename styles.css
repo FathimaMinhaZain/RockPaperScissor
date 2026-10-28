@@ -1,0 +1,18 @@
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    margin: 10px;
+}
+
+button img{
+    width: 150px;
+    height: 150px;
+}
+#score{
+    text-align: center;
+    margin: 20px;
+}
